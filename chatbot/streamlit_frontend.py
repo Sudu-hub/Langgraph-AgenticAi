@@ -1,5 +1,5 @@
 import streamlit as st
-
+from langgraph_backend import chatbot
 #st.session-state -> dict->
 if 'message_history' not in st.session_state:
     st.session_state['message_history'] = []
@@ -17,7 +17,8 @@ if user_input:
     st.session_state['message_history'].append({'role':'user', 'content':user_input})
     with st.chat_message('user'):
         st.text(user_input)
-        
+    
+    chatbot.invoke()
     #first add the message to message_history
     st.session_state['message_history'].append({'role':'assistant', 'content':user_input})
     with st.chat_message('assistant'):

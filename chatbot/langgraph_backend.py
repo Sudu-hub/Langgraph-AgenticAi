@@ -5,7 +5,7 @@ from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph.message import add_messages
 from langchain_core.messages import BaseMessage
 
-llm = ChatOllama(model='gemma3:4b')
+llm = ChatOllama(model='qwen3:4b')
 
 #create state using message or add_messages
 class ChatState(TypedDict):
